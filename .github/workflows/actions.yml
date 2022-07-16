@@ -8,7 +8,9 @@ jobs:
         run: |
           pwd
           ls -a
-          echo "commit id : ", $GITHUB_SHA
+          echo "commit id :" $GITHUB_SHA
+          echo "github repository :" $GITHUB_REPOSITORY
+          echo "github workspace :" $GITHUB_WORKSPACE
       - name: Checkout 
         uses: actions/checkout@v1
       - name: List files
