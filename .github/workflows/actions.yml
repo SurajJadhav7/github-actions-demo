@@ -1,8 +1,22 @@
 name: Actions Workflow
-on: 
+on:
   pull_request:
-  repository_dispatch:
-    types: [build]
+    # branches-ignore:  # exexute on all branches except develop
+    #   - develop 
+    branches:
+      - develop
+      - 'feature/*' # matches feature/abc but not feature/abc/def
+      - 'feature/**' # matches feature/abc and also feature/abc/def
+      - '!feature/abc' # excludes feature/abc even after matches
+    tags:
+      - v1.*
+    paths:
+      - '**.js'
+    # paths-ignore:
+    #   - 'docs/**'
+  # pull_request:
+  # repository_dispatch:
+  #   types: [build]
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
