@@ -8,6 +8,7 @@ jobs:
         run: |
           pwd
           ls -a
+          echo "commit id : ", $GITHUB_SHA
       - name: Checkout 
         uses: actions/checkout@v1
       - name: List files
