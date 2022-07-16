@@ -1,5 +1,5 @@
 name: Actions Workflow
-on: [push]
+on: [pull_request]
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
@@ -11,7 +11,6 @@ jobs:
           echo "commit id :" $GITHUB_SHA
           echo "github repository :" $GITHUB_REPOSITORY
           echo "github workspace :" $GITHUB_WORKSPACE
-          echo "github tocken : ${{ github.token }}"
           git clone git@github.com:$GITHUB_REPOSITORY
           git checkout $GITHUB_SHA
       # - name: Checkout 
