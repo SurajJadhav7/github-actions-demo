@@ -11,8 +11,6 @@ jobs:
           echo "commit id :" $GITHUB_SHA
           echo "github repository :" $GITHUB_REPOSITORY
           echo "github workspace :" $GITHUB_WORKSPACE
-          git clone git@github.com:$GITHUB_REPOSITORY
-          git checkout $GITHUB_SHA
       # - name: Checkout 
       #   uses: actions/checkout@v1
       - name: List files
