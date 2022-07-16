@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: check payload
-        run: echo "${{  github.client_payload }}"
+        run: echo "${{  github.event.client_payload }}"
       # - name: List files
       #   run: |
       #     pwd
