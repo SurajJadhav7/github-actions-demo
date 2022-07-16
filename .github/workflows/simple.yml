@@ -6,8 +6,6 @@ jobs:
     steps:
       - name: echo a string
         run: echo "Hello world"
-      - name: sleep
-        run: sleep 10
       - name: multiline script
         run: |
           node -v
