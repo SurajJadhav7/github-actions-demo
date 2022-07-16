@@ -6,6 +6,8 @@ jobs:
     steps:
       - name: echo a string
         run: echo "Hello world"
+      - name: sleep
+        run: sleep 10
       - name: multiline script
         run: |
           node -v
@@ -14,8 +16,6 @@ jobs:
         run: |
           import platform
           print(platform.processor())
-          import time
-          time.sleep(5)
         shell: python
   run-windows-commands:
     runs-on: windows-latest
