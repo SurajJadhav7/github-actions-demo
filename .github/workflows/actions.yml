@@ -1,18 +1,16 @@
 name: Actions Workflow
-on:
-  pull_request:
-    types: [closed, assigned, opened, reopened]
+on: [pull_request]
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
-      - name: List files
-        run: |
-          pwd
-          ls -a
-          echo "commit id :" $GITHUB_SHA
-          echo "github repository :" $GITHUB_REPOSITORY
-          echo "github workspace :" $GITHUB_WORKSPACE
+      # - name: List files
+      #   run: |
+      #     pwd
+      #     ls -a
+      #     echo "commit id :" $GITHUB_SHA
+      #     echo "github repository :" $GITHUB_REPOSITORY
+      #     echo "github workspace :" $GITHUB_WORKSPACE
       # - name: Checkout 
       #   uses: actions/checkout@v1
       - name: List files
