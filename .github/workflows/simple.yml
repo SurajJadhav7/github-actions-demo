@@ -15,7 +15,3 @@ jobs:
           import platform
           print(platform.processor())
         shell: python
-      - name: javascript command
-        run: |
-          console.log("Hello JSON")
-        shell: javascript
