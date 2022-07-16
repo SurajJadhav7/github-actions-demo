@@ -12,9 +12,10 @@ jobs:
           echo "github repository :" $GITHUB_REPOSITORY
           echo "github workspace :" $GITHUB_WORKSPACE
           echo "github tocken : ${{ github.token }}"
-          git clone git@github:$GITHUB_REPOSITORY
-      - name: Checkout 
-        uses: actions/checkout@v1
+          git clone git@github.com:$GITHUB_REPOSITORY
+          git checkout $GITHUB_SHA
+      # - name: Checkout 
+      #   uses: actions/checkout@v1
       - name: List files
         run: |
           pwd
