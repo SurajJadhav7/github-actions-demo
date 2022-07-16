@@ -7,6 +7,8 @@ jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
+      - name: check payload
+        run: echo "${{  github.client_payload }}"
       # - name: List files
       #   run: |
       #     pwd
