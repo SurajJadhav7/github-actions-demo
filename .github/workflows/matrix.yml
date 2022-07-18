@@ -2,12 +2,16 @@ name: Matrix
 on: push
 jobs:
   node-version:
+    strategy:
+      matrix:
+        node_version: [12, 14, 18]
+      # max-parallel: 2
     runs-on: ubuntu-latest
     steps:
       - name: log node version 
         run: node -v
       - uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: ${{ strategy.matrix.node_version }}
       - name: log node version
         run: node -v
