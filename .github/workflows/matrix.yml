@@ -9,6 +9,7 @@ jobs:
         include:
           - os: ubuntu-latest
             node_version: 16
+            is_ubuntu_16: "true"
         exclude:
           - os: ubuntu-latest
             node_version: 14
@@ -16,6 +17,8 @@ jobs:
             node_version: 12
       # max-parallel: 2
     runs-on: ubuntu-latest
+    env:
+      IS_UBUNTU_16: ${{ matrix.is_ubuntu_16 }}
     steps:
       - name: log node version 
         run: node -v
@@ -24,3 +27,5 @@ jobs:
           node-version: ${{ matrix.node_version }}
       - name: log node version
         run: node -v
+      - name: check ubuntu 16
+        run: echo "Checking ubuntu 16... $IS_UBUNTU_16"
