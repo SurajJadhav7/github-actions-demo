@@ -17,4 +17,4 @@ jobs:
     steps:
       - name: Post a user
         run: |
-          lsof -i tcp:3001
+          echo 'Done'
