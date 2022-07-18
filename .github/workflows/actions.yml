@@ -1,5 +1,8 @@
 name: Actions Workflow
 on:
+  push:
+    branches:
+      - develop
   pull_request:
     # branches-ignore:  # exexute on all branches except develop
     #   - develop 
@@ -8,10 +11,10 @@ on:
       - 'feature/*' # matches feature/abc but not feature/abc/def
       - 'feature/**' # matches feature/abc and also feature/abc/def
       - '!feature/abc' # excludes feature/abc even after matches
-    tags:
-      - v1.*
-    paths:
-      - '**.js'
+    # tags:
+    #   - v1.*
+    # paths:
+    #   - '**.js'
     # paths-ignore:
     #   - 'docs/**'
   # pull_request:
